@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://ducthinhle1.github.io/ducthinhle_portfolio/)",
+      "Bash(curl -s \"https://api.github.com/repos/ducthinhle1/ducthinhle_portfolio/pages\")"
+    ]
+  }
+}
