@@ -1,11 +1,65 @@
-/** =========== 
-	Footer
-===============*/
-footer {
-    padding: 40px 0;
-    font-size: var(--caption-font-size);
-    color: var(--n-500);
-    text-align: center;
-    background-image: var(--gradient-color);
-    max-width: none !important;
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 80px 0 40px;
+}
+
+.footer__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+}
+
+.footer__heading {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.footer__text {
+  color: var(--subtext);
+  line-height: 1.65;
+}
+
+.footer__email {
+  color: var(--blue);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.footer__email:hover {
+  opacity: 0.75;
+}
+
+.footer__phone {
+  color: var(--subtext);
+  font-size: 0.9rem;
+}
+
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  padding-top: 8px;
+}
+
+.footer__bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
 }

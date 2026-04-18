@@ -1,141 +1,76 @@
-/* *=====================
-    Media Queries 
-=========================*/
-
-/* *=====================
-    Desktop
-=========================*/
-@media (max-width: 1536px) {
-    .container {
-        max-width: 1440px;
-    }
+@media (max-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (max-width: 1440px) {
-    .container {
-        max-width: 1028px;
-    }
-
-    /* *SKILLS* */
-    .softSkills_badge {
-        position: static !important;
-        transform: none !important;
-    }
-
-    .softSkills__book_icons {
-        display: none;
-    }
-}
-
-/* *=====================
-      Tablet & small laptop
-  =========================*/
-
-@media (max-width: 1280px) {
-    .container {
-        max-width: 1024px;
-    }
-
-    section {
-        margin-top: 80px;
-        margin-bottom: 80px;
-    }
-
-    /** Header **/
-    .header__container {
-        flex-direction: column;
-    }
-
-    .header__column--left {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header__content--left {
-        align-items: center;
-
-        & p {
-            text-align: center;
-            max-width: 320px;
-        }
-    }
-
-    .header__column--right {
-        text-align: center;
-        align-items: center;
-    }
-}
-
-/* *=====================
-     Small Tablet - landscape mode
-  =========================*/
 @media (max-width: 768px) {
-    .container {
-        max-width: 640px;
-    }
+  .nav__links li:not(:last-child) {
+    display: none;
+  }
 
-    /** ABOUT ME **/
-    .aboutMe__section {
-        margin: 80px auto;
+  .hero {
+    padding: 100px 1.5rem 60px;
+  }
 
-        & img {
-            display: none;
-        }
-    }
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-    /** SKILLS **/
-    .skills__grid_container {
-        grid-template-columns: repeat(1, minmax(200px, 1fr));
-        grid-template-rows: repeat(4, minmax(280px, auto));
-        /* grid-template-rows: repeat(2, minmax(280px, auto)); */
-        /* grid-auto-rows: minmax(280px, auto); */
+  .about__photo-placeholder {
+    max-width: 100%;
+    height: 280px;
+    margin: 0 auto;
+  }
 
-        & .skills__grid_item {
-            padding: 1rem 1rem;
-            grid-column: span 1 !important;
-            grid-row: span 1 !important;
-        }
-    }
+  .skills__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__grid {
+    flex-direction: column;
+  }
+
+  .footer__right {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .section__heading {
+    font-size: 2rem;
+  }
+
+  .footer__heading {
+    font-size: 1.8rem;
+  }
 }
 
-/* *=====================
-     Phone
-  =========================*/
-@media (max-width: 640px) {
-    :root {
-        font-size: 14px;
-        line-height: 16px;
-    }
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
 
-    .container {
-        max-width: 475px;
-        padding: 0 1rem;
-    }
+  section {
+    padding: 72px 0;
+  }
 
-    .section__title {
-        font-size: 2rem;
-        line-height: 2.5rem;
-        text-align: center;
-    }
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    /** Header **/
+  .btn {
+    justify-content: center;
+    width: 100%;
+  }
 
-    header {
-        margin-top: 20px;
-    }
-
-    .header__badge_container {
-        flex-direction: column;
-    }
-
-    /** ABOUT ME **/
-    .aboutMe__container {
-        padding: 1rem;
-        width: 90%;
-        border-radius: 2rem;
-    }
-
-    .aboutMe__content_container {
-        border-radius: 2rem;
-    }
+  .skills__card {
+    padding: 24px;
+  }
 }

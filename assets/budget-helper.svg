@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#89b4fa"/>
+      <stop offset="100%" style="stop-color:#5a8fd4"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b4befe"/>
+      <stop offset="100%" style="stop-color:#8a94e0"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#89b4fa;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#5a8fd4;stop-opacity:0.5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <line x1="100" y1="120" x2="700" y2="120" stroke="#21262d" stroke-width="1"/>
+  <line x1="100" y1="200" x2="700" y2="200" stroke="#21262d" stroke-width="1"/>
+  <line x1="100" y1="280" x2="700" y2="280" stroke="#21262d" stroke-width="1"/>
+  <line x1="100" y1="360" x2="700" y2="360" stroke="#21262d" stroke-width="1"/>
+  <line x1="100" y1="440" x2="700" y2="440" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Card -->
+  <rect x="60" y="80" width="680" height="420" rx="16" fill="#161b22" stroke="rgba(137,180,250,0.12)" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="100" y="130" font-family="monospace" font-size="13" fill="rgba(137,180,250,0.5)" letter-spacing="2">MONTHLY BUDGET</text>
+
+  <!-- Balance -->
+  <text x="100" y="175" font-family="monospace" font-size="32" font-weight="bold" fill="#e6edf3">$2,480.00</text>
+  <text x="280" y="175" font-family="monospace" font-size="13" fill="#4caf50">▲ 12.4%</text>
+
+  <!-- Bar chart -->
+  <rect x="130" y="260" width="60" height="140" rx="6" fill="url(#bar3)"/>
+  <rect x="220" y="220" width="60" height="180" rx="6" fill="url(#bar1)"/>
+  <rect x="310" y="290" width="60" height="150" rx="6" fill="url(#bar3)"/>
+  <rect x="400" y="200" width="60" height="200" rx="6" fill="url(#bar2)"/>
+  <rect x="490" y="240" width="60" height="160" rx="6" fill="url(#bar1)"/>
+  <rect x="580" y="270" width="60" height="130" rx="6" fill="url(#bar3)"/>
+
+  <!-- Month labels -->
+  <text x="148" y="420" font-family="monospace" font-size="11" fill="#484f58" text-anchor="middle">Jan</text>
+  <text x="238" y="420" font-family="monospace" font-size="11" fill="#484f58" text-anchor="middle">Feb</text>
+  <text x="328" y="420" font-family="monospace" font-size="11" fill="#484f58" text-anchor="middle">Mar</text>
+  <text x="418" y="420" font-family="monospace" font-size="11" fill="#89b4fa" text-anchor="middle">Apr</text>
+  <text x="508" y="420" font-family="monospace" font-size="11" fill="#484f58" text-anchor="middle">May</text>
+  <text x="598" y="420" font-family="monospace" font-size="11" fill="#484f58" text-anchor="middle">Jun</text>
+
+  <!-- Bottom row -->
+  <rect x="100" y="440" width="180" height="40" rx="8" fill="#21262d"/>
+  <text x="190" y="465" font-family="monospace" font-size="12" fill="#8b949e" text-anchor="middle">Income  $3,200</text>
+  <rect x="300" y="440" width="180" height="40" rx="8" fill="#21262d"/>
+  <text x="390" y="465" font-family="monospace" font-size="12" fill="#8b949e" text-anchor="middle">Spent   $720</text>
+  <rect x="500" y="440" width="180" height="40" rx="8" fill="rgba(137,180,250,0.1)" stroke="rgba(137,180,250,0.2)" stroke-width="1"/>
+  <text x="590" y="465" font-family="monospace" font-size="12" fill="#89b4fa" text-anchor="middle">Saved   $2,480</text>
+</svg>

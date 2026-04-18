@@ -1,84 +1,159 @@
-/** ========= 
-	Header
-===============*/
-header {
-    margin-top: 40px;
+/* ===== NAV ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(13, 17, 23, 0.75);
+  border-bottom: 1px solid var(--border);
 }
 
-.header__container {
-    display: flex;
-    gap: 40px;
-
-    & p {
-        color: var(--n-600);
-    }
-
-    & span {
-        font-weight: 600;
-        color: var(--p-950);
-    }
+.nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header__title {
-    font-size: var(--h2-font-size);
-    line-height: var(--h2-line-height);
-    font-weight: 600;
+.nav__logo {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.04em;
 }
 
-.header__column--left {
-    display: flex;
-    flex: 1;
-    gap: 24px;
-    align-items: center;
-
-    & .header__content--left {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    & .header__badge_container {
-        display: flex;
-        gap: 6px;
-        text-align: center;
-    }
-
-    & .badge {
-        font-size: var(--caption-font-size);
-        line-height: var(--caption-line-height);
-        color: var(--p-950);
-        padding: 4px 12px;
-        background-color: var(--p-50);
-        border-radius: 4px;
-        /* line-clamp */
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        line-clamp: 1;
-        overflow: hidden;
-    }
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
 }
 
-.header__column--right {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: end;
-    gap: 8px;
+.nav__links a {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  color: var(--subtext);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.header__img {
-    border-radius: 100px;
-    width: 118px;
-    height: 118px;
-    box-shadow:
-        inset 0px -1px 1px hsla(0, 0%, 100%, 0.5),
-        0 4px 6px -1px hsla(0, 0%, 0%, 0.2),
-        0 2px 4px -2px hsla(0, 0%, 0%, 0.2),
-        inset 0px 1px 3px hsla(0, 0%, 0%, 0.1);
-    background-image: url('../../assets/avatar.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    flex-shrink: 0;
+.nav__links a:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.nav__cta {
+  background: var(--blue) !important;
+  color: #0d1117 !important;
+  font-weight: 600 !important;
+}
+
+.nav__cta:hover {
+  background: #a5c8ff !important;
+  color: #0d1117 !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 2rem 60px;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: blobFloat 10s ease-in-out infinite;
+}
+
+.blob--1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(137, 180, 250, 0.18);
+  top: -100px;
+  right: -100px;
+  animation-duration: 12s;
+}
+
+.blob--2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(180, 190, 254, 0.12);
+  bottom: -80px;
+  left: -80px;
+  animation-duration: 15s;
+  animation-delay: -5s;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero__greeting {
+  font-size: 1rem;
+  color: var(--blue);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.hero__name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.hero__role {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--subtext);
+  font-weight: 400;
+}
+
+.typewriter {
+  color: var(--blue);
+}
+
+.hero__bio {
+  max-width: 50ch;
+  color: var(--subtext);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.hero__socials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
 }

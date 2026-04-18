@@ -1,59 +1,21 @@
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(40px, -40px) scale(1.08); }
+  66%       { transform: translate(-25px, 25px) scale(0.94); }
 }
 
-@-webkit-keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
-@keyframes move-left {
-    to {
-        transform: translateX(calc(-100% - 12px));
-    }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@-webkit-keyframes move-left {
-    to {
-        transform: translateX(calc(-100% - 12px));
-    }
-}
-
-@keyframes move-right {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(calc(0% + 12px));
-    }
-}
-
-@-webkit-keyframes move-right {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(calc(0% + 12px));
-    }
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--blue);
+  font-weight: 300;
 }

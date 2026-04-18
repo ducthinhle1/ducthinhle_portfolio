@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duc Thinh Le — Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      @page { size: A4; margin: 0; }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        font-size: 9.5pt;
+        color: #1a1a2e;
+        background: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        padding: 32px 0;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        background: white;
+        display: grid;
+        grid-template-columns: 72mm 1fr;
+        box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar {
+        background: #0d1117;
+        color: #cdd6f4;
+        padding: 36px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+
+      .photo {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
+        object-fit: cover;
+        object-position: center top;
+        border: 2px solid rgba(137,180,250,0.3);
+      }
+
+      .sidebar-section-title {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 8.5pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #89b4fa;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(137,180,250,0.2);
+      }
+
+      .contact-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .contact-list li {
+        font-size: 8pt;
+        color: #a6adc8;
+        word-break: break-all;
+        line-height: 1.4;
+      }
+
+      .contact-list li span {
+        color: #89b4fa;
+        font-weight: 600;
+        display: block;
+        font-size: 7pt;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 1px;
+      }
+
+      .edu-degree {
+        font-weight: 700;
+        font-size: 9pt;
+        color: #e6edf3;
+        line-height: 1.3;
+      }
+
+      .edu-school {
+        font-size: 8.5pt;
+        color: #89b4fa;
+        margin-top: 2px;
+      }
+
+      .edu-detail {
+        font-size: 8pt;
+        color: #585b70;
+        margin-top: 2px;
+      }
+
+      .edu-gpa {
+        font-size: 8pt;
+        color: #4caf50;
+        margin-top: 3px;
+        font-weight: 600;
+      }
+
+      .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .skill-pill {
+        background: rgba(137,180,250,0.1);
+        border: 1px solid rgba(137,180,250,0.2);
+        color: #89b4fa;
+        font-size: 7.5pt;
+        padding: 3px 8px;
+        border-radius: 100px;
+        font-weight: 500;
+      }
+
+      .soft-pill {
+        background: rgba(180,190,254,0.08);
+        border: 1px solid rgba(180,190,254,0.2);
+        color: #b4befe;
+        font-size: 7.5pt;
+        padding: 3px 8px;
+        border-radius: 100px;
+        font-weight: 500;
+      }
+
+      /* ── MAIN ── */
+      .main {
+        padding: 36px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .main-header {
+        border-bottom: 2px solid #89b4fa;
+        padding-bottom: 12px;
+      }
+
+      .main-name {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 22pt;
+        font-weight: 700;
+        color: #0d1117;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .main-title {
+        font-size: 10pt;
+        color: #89b4fa;
+        font-weight: 600;
+        margin-top: 4px;
+        letter-spacing: 0.04em;
+      }
+
+      .section-title {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 9.5pt;
+        font-weight: 700;
+        color: #0d1117;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 11px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .section-title::before {
+        content: '';
+        display: inline-block;
+        width: 3px;
+        height: 13px;
+        background: #89b4fa;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      .profile-text {
+        color: #4a5568;
+        line-height: 1.65;
+        font-size: 9pt;
+      }
+
+      /* Projects */
+      .project-item {
+        margin-bottom: 14px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(137,180,250,0.3);
+      }
+
+      .project-item:last-child { margin-bottom: 0; }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3px;
+        gap: 8px;
+      }
+
+      .project-name {
+        font-weight: 700;
+        font-size: 9.5pt;
+        color: #1a1a2e;
+      }
+
+      .project-tech {
+        font-size: 7.5pt;
+        font-weight: 600;
+        color: #89b4fa;
+        background: rgba(137,180,250,0.1);
+        padding: 2px 8px;
+        border-radius: 100px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .project-bullets {
+        margin-top: 4px;
+        padding-left: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .project-bullets li {
+        font-size: 8.5pt;
+        color: #4a5568;
+        line-height: 1.5;
+        list-style: disc;
+      }
+
+      .project-link {
+        font-size: 7.5pt;
+        color: #89b4fa;
+        margin-top: 4px;
+        display: block;
+      }
+
+      /* Work experience */
+      .work-item {
+        margin-bottom: 14px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(180,190,254,0.3);
+      }
+
+      .work-item:last-child { margin-bottom: 0; }
+
+      .work-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 3px;
+      }
+
+      .work-title {
+        font-weight: 700;
+        font-size: 9.5pt;
+        color: #1a1a2e;
+      }
+
+      .work-date {
+        font-size: 7.5pt;
+        color: #8b949e;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .work-company {
+        font-size: 8.5pt;
+        color: #b4befe;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      .work-bullets {
+        padding-left: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .work-bullets li {
+        font-size: 8.5pt;
+        color: #4a5568;
+        line-height: 1.5;
+        list-style: disc;
+      }
+
+      @media print {
+        body { background: white; padding: 0; }
+        .page { box-shadow: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <img src="./assets/profilephoto.jpg" alt="Duc Thinh Le" class="photo" />
+
+        <div>
+          <p class="sidebar-section-title">Contact</p>
+          <ul class="contact-list">
+            <li><span>Phone</span>+1 (404) 513-1725</li>
+            <li><span>Email</span>thinhduc175@gmail.com</li>
+            <li><span>Portfolio</span>ducthinhleportfolio.com</li>
+            <li><span>LinkedIn</span>linkedin.com/in/duc-thinh-le-26557335a</li>
+            <li><span>GitHub</span>github.com/ducthinhle1</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Education</p>
+          <p class="edu-degree">B.S. Software Development</p>
+          <p class="edu-school">Georgia Gwinnett College</p>
+          <p class="edu-detail">Expected May 2026</p>
+          <p class="edu-gpa">GPA: 3.79 / 4.0</p>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Technical Skills</p>
+          <div class="skill-pills">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Angular</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">PHP</span>
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Unity</span>
+            <span class="skill-pill">Android Studio</span>
+            <span class="skill-pill">GitHub</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Soft Skills</p>
+          <div class="skill-pills">
+            <span class="soft-pill">Communication</span>
+            <span class="soft-pill">Time Management</span>
+            <span class="soft-pill">Team Collaboration</span>
+            <span class="soft-pill">Problem Solving</span>
+            <span class="soft-pill">Customer Relations</span>
+            <span class="soft-pill">Eager to Learn</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Languages</p>
+          <div class="skill-pills">
+            <span class="skill-pill">English</span>
+            <span class="skill-pill">Vietnamese</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <div class="main-header">
+          <h1 class="main-name">Duc Thinh Le</h1>
+          <p class="main-title">Software Developer &nbsp;·&nbsp; Full-Stack Developer</p>
+        </div>
+
+        <div>
+          <h2 class="section-title">Profile</h2>
+          <p class="profile-text">
+            Final-year Software Development student at Georgia Gwinnett College (GPA 3.79) with
+            hands-on experience building web, mobile, and game applications. I bring a strong work
+            ethic shaped by 7 years in a fast-paced customer-facing environment, combined with a
+            genuine eagerness to learn and grow in any technical role I take on.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="section-title">Projects</h2>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Green Healthy Schools</p>
+              <span class="project-tech">Angular &amp; Node.js</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Built status-based dropdown menus (New, In Progress, Completed) and a "Save as Draft" feature to reduce incomplete form submissions.</li>
+              <li>Redesigned the project form workflow in Angular, making sustainability tracking more intuitive and reducing user errors for school staff.</li>
+            </ul>
+            <a class="project-link">github.com/GGC-SD/GreenHealthySchools</a>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Octopus Rush</p>
+              <span class="project-tech">Unity &amp; C#</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Developed gameplay logic and UI screens in Unity using C#, including player controls and in-game menus for a 2D mobile arcade game.</li>
+              <li>Managed scene transitions and coordinated code changes across a shared repository to keep the team unblocked during development.</li>
+            </ul>
+            <a class="project-link">github.com/ChristianZar/OctopusRush</a>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Budget Helper App</p>
+              <span class="project-tech">Android Studio &amp; Java</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Implemented UI logic for an Android budget tracking app using Java, including input validation and dynamic expense list rendering.</li>
+            </ul>
+            <a class="project-link">github.com/ChristianZar/BudgetHelper-app</a>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Text Based Adventure Game</p>
+              <span class="project-tech">Java</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Designed and implemented the branching narrative system and core game logic using object-oriented Java, including player state management and room transitions.</li>
+            </ul>
+            <a class="project-link">github.com/rwprice31/diary</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">Work Experience</h2>
+
+          <div class="work-item">
+            <div class="work-header">
+              <p class="work-title">Shift Leader</p>
+              <span class="work-date">2017 – Present</span>
+            </div>
+            <p class="work-company">Gongcha</p>
+            <ul class="work-bullets">
+              <li>Led shift operations for a high-volume bubble tea store, managing a team of 4–6 staff to maintain service quality and throughput during peak hours.</li>
+              <li>Operated and reconciled POS systems daily, handling transactions, order management, and end-of-day cash reporting with zero discrepancy.</li>
+              <li>Resolved customer complaints on the spot, turning negative experiences into repeat visits and maintaining high customer satisfaction.</li>
+            </ul>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </body>
+</html>
