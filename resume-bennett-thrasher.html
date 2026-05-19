@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duc Thinh Le — Resume (Bennett Thrasher)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      @page { size: A4; margin: 0; }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        font-size: 9.5pt;
+        color: #1a1a2e;
+        background: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        padding: 32px 0;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        background: white;
+        display: grid;
+        grid-template-columns: 72mm 1fr;
+        box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar {
+        background: #0d1117;
+        color: #cdd6f4;
+        padding: 36px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+
+      .photo {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
+        object-fit: cover;
+        object-position: center top;
+        border: 2px solid rgba(137,180,250,0.3);
+      }
+
+      .sidebar-section-title {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 8.5pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #89b4fa;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(137,180,250,0.2);
+      }
+
+      .contact-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .contact-list li {
+        font-size: 8pt;
+        color: #a6adc8;
+        word-break: break-all;
+        line-height: 1.4;
+      }
+
+      .contact-list li span {
+        color: #89b4fa;
+        font-weight: 600;
+        display: block;
+        font-size: 7pt;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 1px;
+      }
+
+      .edu-degree {
+        font-weight: 700;
+        font-size: 9pt;
+        color: #e6edf3;
+        line-height: 1.3;
+      }
+
+      .edu-school {
+        font-size: 8.5pt;
+        color: #89b4fa;
+        margin-top: 2px;
+      }
+
+      .edu-detail {
+        font-size: 8pt;
+        color: #585b70;
+        margin-top: 2px;
+      }
+
+      .edu-gpa {
+        font-size: 8pt;
+        color: #4caf50;
+        margin-top: 3px;
+        font-weight: 600;
+      }
+
+      .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .skill-pill {
+        background: rgba(137,180,250,0.1);
+        border: 1px solid rgba(137,180,250,0.2);
+        color: #89b4fa;
+        font-size: 7.5pt;
+        padding: 3px 8px;
+        border-radius: 100px;
+        font-weight: 500;
+      }
+
+      .soft-pill {
+        background: rgba(180,190,254,0.08);
+        border: 1px solid rgba(180,190,254,0.2);
+        color: #b4befe;
+        font-size: 7.5pt;
+        padding: 3px 8px;
+        border-radius: 100px;
+        font-weight: 500;
+      }
+
+      /* ── MAIN ── */
+      .main {
+        padding: 36px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .main-header {
+        border-bottom: 2px solid #89b4fa;
+        padding-bottom: 12px;
+      }
+
+      .main-name {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 22pt;
+        font-weight: 700;
+        color: #0d1117;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .main-title {
+        font-size: 10pt;
+        color: #89b4fa;
+        font-weight: 600;
+        margin-top: 4px;
+        letter-spacing: 0.04em;
+      }
+
+      .section-title {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 9.5pt;
+        font-weight: 700;
+        color: #0d1117;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 11px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .section-title::before {
+        content: '';
+        display: inline-block;
+        width: 3px;
+        height: 13px;
+        background: #89b4fa;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      .profile-text {
+        color: #4a5568;
+        line-height: 1.65;
+        font-size: 9pt;
+      }
+
+      /* Projects */
+      .project-item {
+        margin-bottom: 14px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(137,180,250,0.3);
+      }
+
+      .project-item:last-child { margin-bottom: 0; }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3px;
+        gap: 8px;
+      }
+
+      .project-name {
+        font-weight: 700;
+        font-size: 9.5pt;
+        color: #1a1a2e;
+      }
+
+      .project-tech {
+        font-size: 7.5pt;
+        font-weight: 600;
+        color: #89b4fa;
+        background: rgba(137,180,250,0.1);
+        padding: 2px 8px;
+        border-radius: 100px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .project-bullets {
+        margin-top: 4px;
+        padding-left: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .project-bullets li {
+        font-size: 8.5pt;
+        color: #4a5568;
+        line-height: 1.5;
+        list-style: disc;
+      }
+
+      .project-link {
+        font-size: 7.5pt;
+        color: #89b4fa;
+        margin-top: 4px;
+        display: block;
+      }
+
+      /* Work experience */
+      .work-item {
+        margin-bottom: 14px;
+        padding-left: 12px;
+        border-left: 2px solid rgba(180,190,254,0.3);
+      }
+
+      .work-item:last-child { margin-bottom: 0; }
+
+      .work-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 3px;
+      }
+
+      .work-title {
+        font-weight: 700;
+        font-size: 9.5pt;
+        color: #1a1a2e;
+      }
+
+      .work-date {
+        font-size: 7.5pt;
+        color: #8b949e;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .work-company {
+        font-size: 8.5pt;
+        color: #b4befe;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      .work-bullets {
+        padding-left: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .work-bullets li {
+        font-size: 8.5pt;
+        color: #4a5568;
+        line-height: 1.5;
+        list-style: disc;
+      }
+
+      @media print {
+        body { background: white; padding: 0; }
+        .page { box-shadow: none; }
+      }
+
+      @media (max-width: 700px) {
+        body { padding: 0; }
+
+        .page {
+          width: 100%;
+          min-height: auto;
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          padding: 28px 20px;
+          gap: 20px;
+          flex-direction: column;
+        }
+
+        .photo {
+          width: 100px;
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+
+        .main {
+          padding: 28px 20px;
+          gap: 18px;
+        }
+
+        .main-name { font-size: 18pt; }
+
+        .project-header,
+        .work-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+        }
+
+        .project-tech,
+        .work-date {
+          font-size: 7pt;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <img src="./assets/profilephoto.jpg" alt="Duc Thinh Le" class="photo" />
+
+        <div>
+          <p class="sidebar-section-title">Contact</p>
+          <ul class="contact-list">
+            <li><span>Phone</span>+1 (404) 513-1725</li>
+            <li><span>Email</span>thinhduc175@gmail.com</li>
+            <li><span>Portfolio</span><a href="https://ducthinhle-portfolio.vercel.app" style="color:#a6adc8;text-decoration:none;" target="_blank">ducthinhle-portfolio.vercel.app</a></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/duc-thinh-le-26557335a/" style="color:#a6adc8;text-decoration:none;" target="_blank">linkedin.com/in/duc-thinh-le-26557335a</a></li>
+            <li><span>GitHub</span><a href="https://github.com/ducthinhle1" style="color:#a6adc8;text-decoration:none;" target="_blank">github.com/ducthinhle1</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Education</p>
+          <p class="edu-degree">B.S. Software Development</p>
+          <p class="edu-school">Georgia Gwinnett College</p>
+          <p class="edu-detail">May 2026</p>
+          <p class="edu-gpa">GPA: 3.81 / 4.0</p>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Relevant Coursework</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Artificial Intelligence</span>
+            <span class="skill-pill">Information Security</span>
+            <span class="skill-pill">Software Testing &amp; QA</span>
+            <span class="skill-pill">Software Development I &amp; II</span>
+            <span class="skill-pill">Web Development</span>
+            <span class="skill-pill">Mobile App Development</span>
+            <span class="skill-pill">Intro to Databases</span>
+            <span class="skill-pill">Advanced Programming</span>
+            <span class="skill-pill">Operating Systems</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Technical Skills</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Flask</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">Angular</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">PHP</span>
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Unity</span>
+            <span class="skill-pill">Android Studio</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Jira</span>
+            <span class="skill-pill">Agile / Scrum</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Soft Skills</p>
+          <div class="skill-pills">
+            <span class="soft-pill">Communication</span>
+            <span class="soft-pill">Time Management</span>
+            <span class="soft-pill">Team Collaboration</span>
+            <span class="soft-pill">Problem Solving</span>
+            <span class="soft-pill">Customer Relations</span>
+            <span class="soft-pill">Eager to Learn</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Languages</p>
+          <div class="skill-pills">
+            <span class="skill-pill">English</span>
+            <span class="skill-pill">Vietnamese</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="sidebar-section-title">Citizenship</p>
+          <div class="skill-pills">
+            <span class="skill-pill">U.S. Citizen</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <div class="main-header">
+          <h1 class="main-name">Duc Thinh Le</h1>
+          <p class="main-title">Software Developer &nbsp;·&nbsp; AI &amp; Automation</p>
+        </div>
+
+        <div>
+          <h2 class="section-title">Profile</h2>
+          <p class="profile-text">
+            Software Development graduate from Georgia Gwinnett College (GPA 3.81) with
+            hands-on experience in automation pipelines, full-stack development, and AI coursework.
+            Built and deployed a multi-source automated data pipeline in Python; completed coursework
+            in Artificial Intelligence, Information Security, and Software Testing &amp; QA.
+            Practiced Agile/Scrum workflows using Jira and Git in team projects. U.S. Citizen
+            eligible for security clearance. Eager to apply technical skills in an AI-driven,
+            collaborative environment.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="section-title">Projects</h2>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Price Monitor</p>
+              <span class="project-tech">Python · Flask · Automation · APIs</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Built an automated multi-source data pipeline that scrapes Amazon, Target, and eBay on a configurable daily schedule using Python and Flask.</li>
+              <li>Designed a product ingestion and alerting system — users set target prices and receive automated notifications when thresholds are met.</li>
+              <li>Deployed on Railway with a scheduler running daily checks at 9:00 ET; documented configuration, limitations, and workflow for maintainability.</li>
+            </ul>
+            <a class="project-link" href="https://price-monitor-production-5ecb.up.railway.app" target="_blank">price-monitor-production-5ecb.up.railway.app</a>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Green Healthy Schools</p>
+              <span class="project-tech">Angular &amp; Node.js</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Built the project form submission system for Gwinnett Clean &amp; Beautiful's GHS program, used by school liaisons across 20+ school clusters in Gwinnett County Public Schools.</li>
+              <li>Implemented status dropdowns (New, In Progress, Completed) and a "Save as Draft" feature — critical for multi-contributor forms requiring input from teachers, administrators, and support staff.</li>
+            </ul>
+            <a class="project-link" href="https://github.com/GGC-SD/GreenHealthySchools" target="_blank">github.com/GGC-SD/GreenHealthySchools</a>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Octopus Rush <span style="font-size:7pt;color:#b4befe;font-weight:500;">(Capstone)</span></p>
+              <span class="project-tech">Unity &amp; C#</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Final-year capstone project — developed a 2D mobile arcade game in Unity/C#, owning gameplay logic, player controls, and in-game UI screens.</li>
+              <li>Managed scene transitions and coordinated code changes across a shared repository to keep the team unblocked during development.</li>
+            </ul>
+            <a class="project-link" href="https://github.com/ChristianZar/OctopusRush" target="_blank">github.com/ChristianZar/OctopusRush</a>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Budget Helper App</p>
+              <span class="project-tech">Android Studio &amp; Java</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Implemented UI logic for an Android budget tracking app using Java, including input validation and dynamic expense list rendering.</li>
+            </ul>
+            <a class="project-link" href="https://github.com/ChristianZar/BudgetHelper-app" target="_blank">github.com/ChristianZar/BudgetHelper-app</a>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <p class="project-name">Text Based Adventure Game</p>
+              <span class="project-tech">Java</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Designed and implemented the branching narrative system and core game logic using object-oriented Java, including player state management and room transitions.</li>
+            </ul>
+            <a class="project-link" href="https://github.com/rwprice31/diary" target="_blank">github.com/rwprice31/diary</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">Work Experience</h2>
+
+          <div class="work-item">
+            <div class="work-header">
+              <p class="work-title">Shift Leader</p>
+              <span class="work-date">Mar 2019 – Present</span>
+            </div>
+            <p class="work-company">Gongcha</p>
+            <ul class="work-bullets">
+              <li>Led shift operations for a high-volume bubble tea store, managing a team of 2–3 staff to maintain service quality and throughput during peak hours.</li>
+              <li>Operated and reconciled POS systems daily, handling transactions, order management, and end-of-day cash reporting with zero discrepancy.</li>
+              <li>Resolved customer complaints on the spot, turning negative experiences into repeat visits and maintaining high customer satisfaction.</li>
+            </ul>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </body>
+</html>
